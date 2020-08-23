@@ -1,0 +1,23 @@
+{
+  "name": "singleton-checker",
+  "version": "1.0.0",
+  "description": "Runtime Singleton Checker",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuchaosydney/singleton-checker.git"
+  },
+  "keywords": [
+    "singleton"
+  ],
+  "author": "Yuchao Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuchaosydney/singleton-checker/issues"
+  },
+  "homepage": "https://github.com/yuchaosydney/singleton-checker#readme",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js"
+}
