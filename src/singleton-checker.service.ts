@@ -7,7 +7,7 @@ export class SingletonCheckerService {
 
   private static instance: SingletonCheckerService | undefined = undefined;
 
-  private runningInstances: Array<ExistingInstance> = [];
+  private runningInstances: ExistingInstance[] = [];
 
   constructor() {}
 
@@ -16,7 +16,7 @@ export class SingletonCheckerService {
   }
 
   public checkConstructor(className: string): void {
-    const existingInstance: ExistingInstance = this.runningInstances.find(instance => instance.className === className);
+    const existingInstance: ExistingInstance | undefined = this.runningInstances.find(instance => instance.className === className);
     if (existingInstance) {
       existingInstance.numberOfInstances ++;
     } else {

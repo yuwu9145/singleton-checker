@@ -1,0 +1,1 @@
+export * from './singleton-checker.decorator';
