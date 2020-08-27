@@ -31,7 +31,7 @@ export class SingletonCheckerService {
   private logMultipleInstances(): void {
     this.runningInstances.forEach(instance => {
       if (instance.numberOfInstances > 1) {
-        console.log(`%cSingleton Checker In RUNTIME: %cclass ${instance.className} now has ${instance.numberOfInstances} instances!`, 
+        console.log(`🔥 %cSingleton Checker In RUNTIME: %cclass ${instance.className} now has ${instance.numberOfInstances} instances running!`, 
           'color:#cb4b16; background: #002b36; font-size: 12px;', 
           'color:#eee8d5; background: #002b36; font-size: 12px;' );
       }

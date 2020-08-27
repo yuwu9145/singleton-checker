@@ -1,4 +1,4 @@
-import { timer, Subscription, Observable } from 'rxjs';
+import { timer, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { singletonChecker } from '../../../../src/singleton-checker.decorator';
 
