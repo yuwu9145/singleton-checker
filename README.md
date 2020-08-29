@@ -11,3 +11,19 @@ npm install singleton-checker
 yarn add singleton-checker
 ```
 ## Usage
+
+```js
+import { singletonChecker } from 'singleton-checker';
+
+@singletonChecker
+class SampleService {}
+```
+When multiple instances are created from "SampleService" class in runtime, a warning message will be printed in console
+
+```js
+🔥 Singleton Checker In RUNTIME: class SimpleService now has 2 instances running!
+```
+License
+----
+
+MIT
