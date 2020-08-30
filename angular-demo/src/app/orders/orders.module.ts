@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './orders.component';
 
-import { TimerService } from '../services/timer.service';
+import { SimpleService } from '../services/simple.service';
 
 @NgModule({
   declarations: [OrdersComponent],
@@ -12,6 +12,6 @@ import { TimerService } from '../services/timer.service';
     CommonModule,
     OrdersRoutingModule
   ],
-  providers: [TimerService]
+  providers: [SimpleService]
 })
 export class OrdersModule { }

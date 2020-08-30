@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersComponent } from './customers.component';
 
-import { TimerService } from '../services/timer.service';
+import { SimpleService } from '../services/simple.service';
 
 
 @NgModule({
@@ -13,6 +13,6 @@ import { TimerService } from '../services/timer.service';
     CommonModule,
     CustomersRoutingModule
   ],
-  providers: [TimerService]
+  providers: [SimpleService]
 })
 export class CustomersModule { }

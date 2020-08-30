@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimerService } from '../services/timer.service';
+import { SimpleService } from '../services/simple.service';
 
 @Component({
   selector: 'app-orders',
@@ -8,7 +8,7 @@ import { TimerService } from '../services/timer.service';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(public timerService: TimerService) { }
+  constructor(public simpleService: SimpleService) { }
 
   ngOnInit(): void {
   }
