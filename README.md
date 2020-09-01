@@ -27,4 +27,4 @@ When multiple instances are created from "SampleService" class in runtime, a war
 License
 ----
 
-MIT
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
