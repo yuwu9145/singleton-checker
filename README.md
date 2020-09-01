@@ -18,6 +18,7 @@ import { singletonChecker } from 'singleton-checker';
 @singletonChecker
 class SampleService {}
 ```
+## Outcome
 When multiple instances are created from "SampleService" class in runtime, a warning message will be printed in console
 
 ```js
