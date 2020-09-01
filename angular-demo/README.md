@@ -39,14 +39,7 @@ export class SimpleService {
    * A helper function generate unique ramdon string
    */
   private makeid(): string {
-    let text = '';
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-    for (let i = 0; i < 5; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-    return text;
+    // ... implentation
   }
 }
 ```
