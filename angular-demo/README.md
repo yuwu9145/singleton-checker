@@ -2,8 +2,6 @@
 
 This Angular project demonstrates how multiple instances are generated from a service class when using lazy loading strategy.
 
-(This is a very common mistake that could be made by team members who do not fully understand how does Dependency Injection work in Angular framework)
-
 ### Project Overview
 
 
