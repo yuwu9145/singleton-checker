@@ -1,4 +1,4 @@
-# AngularDemo
+# AngularDemo (A service class is constructed twice in two feature modules)
 
 This Angular project demonstrates how multiple instances are generated from a service class when using lazy loading strategy.
 
