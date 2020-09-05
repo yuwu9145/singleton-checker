@@ -1,27 +1,45 @@
-# AngularDemo
+# AngularDemo 
+## (A service class is unexpectedly constructed twice in two feature modules)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
+This Angular project demonstrates how multiple instances are generated from a service class when using lazy loading strategy.
 
-## Development server
+### Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+1. Create two feature modules (**CustomersModule** & **OrdersModule**)
+2. Declare lazy-loaded routes for these two feature modules respectively in **AppRoutingModule** 
+  ```js
+const routes: Routes = [
+  {
+    path: 'customers',
+    loadChildren: () =>
+      import('./customers/customers.module').then((m) => m.CustomersModule),
+  },
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./orders/orders.module').then((m) => m.OrdersModule),
+  },
+];
+```
+3. Create a simple service class **SimpleService**. This service exposes a public property **simpleServiceId** which is assigned an unique id string when the constructor function is invoked.
+  ```js
+@Injectable()
+export class SimpleService {
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  // A Class property can be accessed by public
+  public simpleServiceId;
 
-## Build
+  constructor() {
+    // Assign an unique string to simpleServiceId everytime when constructor function is invoked
+    this.simpleServiceId = this.makeid();
+  }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  /**
+   * A helper function generate unique ramdon string
+   */
+  private makeid(): string {
+    // ... implentation
+  }
+}
+```
