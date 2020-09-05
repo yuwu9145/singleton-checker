@@ -5,6 +5,8 @@ Accidently creating multiple instances from the same service class will certainl
 This tool is a Typescript class decorator which can be easily applied to the class that you want its instance to be created only once and subsequently used as a singleton object during runtime.
 This decorator acts as an observer of the class's constructor. When the class constructor is invoked more than once during runtime, it will print a console warning message which will
 help you to checkout why multiple instances are created from a given class.
+## Demo
+![](angular-demo.gif)
 ## Installation
 ```js
 npm install singleton-checker
