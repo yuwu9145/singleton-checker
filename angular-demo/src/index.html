@@ -8,6 +8,26 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <pre class="prettyprint">
+  export class SimpleService {
+
+    // publicly accessible property
+    public simpleServiceId;
+
+    constructor() {
+      // Assign an unique string to simpleServiceId everytime when constructor function is invoked
+      this.simpleServiceId = this.makeid();
+    }
+
+    /**
+    * A helper function generate unique ramdon string
+    */
+    private makeid(): string {
+      // ...implementation
+    }
+  }
+  </pre>
   <app-root></app-root>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>

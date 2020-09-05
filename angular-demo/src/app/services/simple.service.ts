@@ -5,11 +5,11 @@ import { singletonChecker } from '../../../../src/singleton-checker.decorator';
 @Injectable()
 export class SimpleService {
 
-  // A Class property can be accessed by public
+  // publicly accessible property
   public simpleServiceId;
 
   constructor() {
-    // Assign an unique string to simpleServiceId everytime when constructor function is invoked
+    // assign an unique string to simpleServiceId everytime when constructor function is invoked
     this.simpleServiceId = this.makeid();
   }
 
