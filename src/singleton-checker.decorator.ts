@@ -1,16 +1,12 @@
 import { SingletonCheckerService } from './singleton-checker.service';
 
-export function singletonChecker<T>(constructor: any): any {
+export function singletonChecker<T extends { new(...args: any[]): {} }>(constructor: any): any {
 
-  const originalConstructor = constructor;
-
-  const newConstructor = function(...args: any[]): any {
-    const singletonCheckerService = SingletonCheckerService.Instance;
-    singletonCheckerService.checkConstructor(originalConstructor.name);
-    return new originalConstructor(...args);
-  }
-
-  newConstructor.prototype = originalConstructor.prototype;
-
-  return newConstructor;
+  return class extends constructor {
+    constructor(...args) {
+      super(...args);
+      const singletonCheckerService = SingletonCheckerService.Instance;
+      singletonCheckerService.checkConstructor(constructor.name);
+    } 
+  };
 }

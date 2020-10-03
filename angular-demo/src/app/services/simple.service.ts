@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { singletonChecker } from '../../../../src/singleton-checker.decorator';
+import { HttpClient } from  '@angular/common/http';
 
 @singletonChecker
 @Injectable()
@@ -8,7 +9,10 @@ export class SimpleService {
   // publicly accessible property
   public simpleServiceId;
 
-  constructor() {
+  constructor(
+    private httpClient: HttpClient
+  ) {
+    this.httpClient.get('');
     // assign an unique string to simpleServiceId everytime when constructor function is invoked
     this.simpleServiceId = this.makeid();
   }
